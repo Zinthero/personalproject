@@ -1,0 +1,1 @@
+select atwill, daily, utility from characters where id=${id}

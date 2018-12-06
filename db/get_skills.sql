@@ -1,0 +1,2 @@
+select acrobatics, arcana, athletics, bluff, diplomacy, dungeoneering, endurance, heal, history, insight, intimidate, nature, perception, religion, stealth, streetwise, thievery where id=${1}
+from characters where id=${id}
