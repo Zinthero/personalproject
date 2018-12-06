@@ -77,8 +77,8 @@ export default class CharacterSheet extends Component {
         </div>
         <div className="container">
         <li class="d-inline-flex p-10 m-40 "> 
-        <OtherInfo/>
         <BasicInfo/>
+        <OtherInfo/>
         <AbilityScores/>
         <SkillInfo/>
         </li>

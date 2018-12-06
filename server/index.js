@@ -9,6 +9,7 @@ const cc = require ('./controllers/characterController')
 const authcontrol = require('./controllers/Auth')
 
 const session = require('express-session')
+const path = require('path')
 require('dotenv').config()
 
 
@@ -29,6 +30,8 @@ massive(CONNECTION_STRING).then(db => {
     app.set('db', db)
     console.log('db connected!')
   })
+
+  app.use( express.static( `${__dirname}/../build` ) );
 
 app.post('/auth/login', authcontrol.login)
 app.post('/auth/register', authcontrol.register)

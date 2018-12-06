@@ -61,6 +61,8 @@ class BasicInfo extends Component {
   render() {
     let { charactername, level, characterclass, paragon, destiny, race, size, age, gender, height, weight, alignment, diety, totalxp } = this.state.basicInfo
     return (
+      
+       
       <div className="card card-body mb-3">
         <h1> <i class="fas fa-user-circle"></i>Character</h1>
         <div><h5>Name:</h5><input value={charactername} onChange={(e)=>this.handleChange(e.target.value,'charactername')}/></div>
@@ -76,6 +78,7 @@ class BasicInfo extends Component {
         <div><h5>Diety:</h5><input value={diety} onChange={(e)=>this.handleChange(e.target.value,'diety')}/></div>
         <button type="button" class="btn btn-danger" onClick={this.addDetails}>Update</button>
       </div>
+      
     )
   }
 }
