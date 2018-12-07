@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom'
 import {Switch, Route} from 'react-router-dom'
 import {Redirect} from 'react-router-dom'
 import {userLoggedIn} from '../redux/reducer'
+import {userLoggedOut} from '../redux/reducer'
 
 
 //components 
@@ -12,6 +13,7 @@ import CharacterSheet from './CharacterSheet'
 import Bio from './Bio'
 import Inventory from './Inventory'
 import Skills from './Skills'
+import Register from './Register'
 
 
 
@@ -45,6 +47,7 @@ class Login extends Component {
       })
     })
   }
+  
   render() {
     
     return this.props.isAuthenticated?
@@ -52,7 +55,7 @@ class Login extends Component {
       
       
       <div>  
-          <header className= "navbar navbar-expand-sm navbar-dark bg-danger mb-0 py-0   " > <h1><i class="fab fa-d-and-d ml-10"></i></h1><h1>Tabletop Pro</h1>
+          <header className= "navbar navbar-expand-sm navbar-dark bg-danger mb-0 py-0 justify-content-between  " > <h1><i class="fab fa-d-and-d ml-10"></i></h1><h1>Tabletop Pro</h1>
           <input
           type="text"
           name="email"
@@ -66,9 +69,10 @@ class Login extends Component {
           value={this.state.password}
           onChange={this.handleChange}/>
           
-          <button class="btn btn-outline-dark my-2 my-sm-0 " onClick={this.handleClick}>Login</button>
+          <button class="btn btn-outline-dark my-2 my-sm-0 mr-5 " onClick={this.handleClick}>Login</button>
           {this.state.error}
-       
+          
+       <Register/>
           </header>
       </div>
     

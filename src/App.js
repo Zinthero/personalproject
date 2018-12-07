@@ -28,7 +28,7 @@ class App extends Component {
         <Route path ="/inventory"component= {Inventory}/>
         <Route path ="/charactersheet" component = {CharacterSheet}/>
       </Switch>
-    <Register/>
+   
    
     
       </div>

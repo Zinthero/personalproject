@@ -56,8 +56,9 @@ import BioForm from './BioForm'
   render() {
     let {personalitytraits, background, mannersappear,compantions} = this.state.bio
     return (
+      <div> 
+      <Header/>
       <div className="card card-body mb-3">
-        <Header/>
         <h1>
         Bio
         </h1>
@@ -75,6 +76,7 @@ import BioForm from './BioForm'
         <h1>Companions</h1>
         <textarea name="compantions" cols="30" rows="10" value={compantions} onChange={(e)=>this.handleChange(e.target.value,'compantions')}></textarea>
         <button type="button" class="btn btn-danger" onClick={this.addBio}>Update</button>
+      </div>
       </div>
     )
   }

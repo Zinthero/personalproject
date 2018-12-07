@@ -42,9 +42,10 @@ class Skills extends Component {
   render() {
     let {atwill,encounter,daily,utility} = this.state.powers
     return (
+       <div>
+      <Header/>
       <div className="card card-body mb-3">
 
-        <Header/>
       <h1>Character Abilities</h1>
         <div>
         <Link to="charactersheet"><button type="button" class="btn btn-light">Character Sheet</button></Link>
@@ -60,7 +61,7 @@ class Skills extends Component {
         <h1>Utility Powers</h1>
         <textarea name="utility" cols="30" rows="10" value={utility} onChange={(e)=>this.handleChange(e.target.value,'utility')}></textarea>
         <button type="button" class="btn btn-danger" onClick={this.addPowers}>Update</button>
-        
+        </div>
       </div>
     )
   }

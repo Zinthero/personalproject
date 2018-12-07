@@ -4,6 +4,7 @@ import axios from 'axios'
 import { connect } from 'react-redux';
 import {userLoggedIn}from '../redux/reducer'
 
+
 class BasicInfo extends Component {
     constructor(props){
         super(props)
@@ -64,6 +65,7 @@ class BasicInfo extends Component {
       
        
       <div className="card card-body mb-3">
+   
         <h1> <i class="fas fa-user-circle"></i>Character</h1>
         <div><h5>Name:</h5><input value={charactername} onChange={(e)=>this.handleChange(e.target.value,'charactername')}/></div>
         <div><h5>Level:</h5><input value={level} onChange={(e)=>this.handleChange(e.target.value,'level')}/></div>
@@ -77,6 +79,7 @@ class BasicInfo extends Component {
         <div><h5>Alignment:</h5><input value={alignment} onChange={(e)=>this.handleChange(e.target.value,'alignment')}/></div>
         <div><h5>Diety:</h5><input value={diety} onChange={(e)=>this.handleChange(e.target.value,'diety')}/></div>
         <button type="button" class="btn btn-danger" onClick={this.addDetails}>Update</button>
+
       </div>
       
     )
