@@ -68,7 +68,7 @@ module.exports={
         let {strength, constitution, charisma, dexterity, intelligence, wisdom} = req.body
         let {id} = req.session.user
         db.add_abilities({strength, constitution, charisma, dexterity, intelligence, wisdom,  id}).then(dbRes=>{
-            res.status(200).send(dbRes)
+            res.status(200).send(dbRes[0])
         })
     },
     addPowers(req,res){
@@ -88,7 +88,7 @@ module.exports={
         console.log(111111, req.body, id)
         db.add_details({id, charactername, level, characterclass, paragon, destiny, totalxp, race, size, age, gender, height, weight, alignment, diety})
         .then(dbRes=>{
-            res.status(200).send(dbRes)
+            res.status(200).send(dbRes[0])
             
         })
     },
@@ -101,7 +101,7 @@ module.exports={
         
         db.add_skills({id,acrobatics, arcana, athletics, bluff, diplomacy, dungeoneering, endurance, heal, history, insight, intimidate, nature, perception, religion, stealth, streetwise, thievery})
         .then(dbRes=>{
-            res.status(200).send(dbRes)
+            res.status(200).send(dbRes[0])
         })
     },
     addOther(req,res){
@@ -109,7 +109,7 @@ module.exports={
         let {initiative, health, ac, fort, reflexes, will, speed} = req.body
         let {id}=req.session.user
         db.add_other({initiative, health, ac, fort, reflexes, will, speed, id}).then(dbRes=>{
-            res.status(200).send(dbRes)
+            res.status(200).send(dbRes[0])
         })
     },
     addInventory(req,res){
@@ -119,5 +119,6 @@ module.exports={
         db.add_inventory({id,weapons,armor,magicitems,otherequipment,misc,gold}).then(dbRes=>{
             res.status(200).send(dbRes[0])
         })
-    }
+    },
+ 
 }

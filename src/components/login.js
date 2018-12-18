@@ -55,13 +55,15 @@ class Login extends Component {
       
       
       <div>  
-          <header className= "navbar navbar-expand-sm navbar-dark bg-danger mb-0 py-0 justify-content-between  " > <h1><i class="fab fa-d-and-d ml-10"></i></h1><h1>Tabletop Pro</h1>
+          <header className= "navbar text-white navbar-expand-sm navbar-dark bg-dark d-flex justify-content-around" > <h1><i class="fab fa-d-and-d ml-10"></i></h1><h1>Tabletop Pro</h1>
+         
           <input
           type="text"
           name="email"
           placeholder="email"
           value={this.state.email}
           onChange={this.handleChange}/>
+          
           <input
           type= "password"
           name="password"
@@ -69,7 +71,7 @@ class Login extends Component {
           value={this.state.password}
           onChange={this.handleChange}/>
           
-          <button class="btn btn-outline-dark my-2 my-sm-0 mr-5 " onClick={this.handleClick}>Login</button>
+          <button class="btn btn-outline-light my-2 my-sm-0 mr-4" onClick={this.handleClick}>Login</button>
           {this.state.error}
           
        <Register/>

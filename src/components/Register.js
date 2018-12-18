@@ -38,21 +38,23 @@ class Register extends Component {
   render() {
     return this.props.isAuthenticated ?
     <Redirect to="/"/>: 
-      <div>
-        <h1>Registration</h1>
+      <div class="d-flex justify-content-end">
+        <h1 class="mr-3 my-sm-3">Registration:</h1>
         <input
+        class="my-sm-4"
         type="text"
         name="email"
         placeholder="email"
         value={this.state.email}
         onChange={this.handleChange}/>
         <input
+        class="my-sm-4 ml-2"
         type="password"
         name="password"
         placeholder="password"
         value={this.state.password}
         onChange={this.handleChange}/>
-        <button onClick={this.handleClick}>Submit</button>
+        <button className= "btn btn-outline-light my-2 my-sm-4 ml-3" onClick={this.handleClick}>Submit</button>
         {this.state.error}
 
       </div>

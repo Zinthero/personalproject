@@ -4,6 +4,7 @@ import CharacterSheet from './CharacterSheet'
 import { connect } from 'react-redux';
 import {userLoggedIn}from '../redux/reducer'
 
+
  class AbilityScores extends Component {
   constructor(props){
     super(props)
@@ -34,6 +35,7 @@ import {userLoggedIn}from '../redux/reducer'
         charisma
       })
       this.props.userLoggedIn(response.data)
+      
     })
   }
 
@@ -41,7 +43,7 @@ render() {
     let {strength, constitution, dexterity, intelligence, wisdom,charisma}= this.state
     console.log(this.props.character)
     return (
-        <div className="card card-body mb-3">
+        <div className="card card-body text-white bg-danger border-dark mb-3">
             <h1> <i class="fas fa-fist-raised"></i>Ability Scores</h1>
             <div><h5>Strength:</h5><input value={strength} onChange={(e)=>this.handleChange(e.target.value,'strength')}/>
             <p>mod:{mods(strength)}</p></div>
@@ -55,7 +57,9 @@ render() {
             <p>mod:{mods(wisdom)}</p></div>
             <div><h5>Charisma:</h5><input value={charisma} onChange={(e)=>this.handleChange(e.target.value,'charisma')}/>
             <p>mod:{mods(charisma)}</p></div>
-            <button type="button" class="btn btn-danger" onClick={this.addAbilities}>Update</button>
+           
+            <button type="button" class="btn btn-dark mt-5" data-toggle="tooltip"  data-placement="bottom" title="Update Ability Scores" onClick={this.addAbilities}>Update</button>
+            
         </div>
     )
 }
@@ -68,3 +72,4 @@ export default connect(mapStateToProps,{userLoggedIn})(AbilityScores)
 function mods(type){
     return Math.floor((type-10)/2) || 0
 }
+

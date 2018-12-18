@@ -6,6 +6,7 @@ import {Link} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 
+
 //componnets
 import CharacterSheet from './components/CharacterSheet'
 import Bio from './components/Bio'
@@ -37,3 +38,4 @@ class App extends Component {
 }
 
 export default App;
+

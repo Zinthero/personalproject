@@ -62,27 +62,33 @@ export default class CharacterSheet extends Component {
       }
   })
   }
+deleteCharacter(){
+  axios.get(`/api/characters/${this.state.character.id}`).then(res=>{
+    
+  })
+}
+
  
 
   render() {
     console.log(11111)
     return (
-      <div>
+      <div class="text-white bg-danger">
           <Header/>
         <h1> Character Sheet</h1>
-        <div>
-        <Link to="bio"><button type="button" class="btn btn-light">Bio</button></Link>
-        <Link to="skills"><button type="button" class="btn btn-light">Skills</button></Link>
-        <Link to="inventory"><button type="button" class="btn btn-light">Inventory</button></Link>
+        <div class="mt-5" >
+        <Link to="bio"><button type="button" class="btn btn-dark mr-5">Bio</button></Link>
+        <Link to="skills"><button type="button" class="btn btn-dark mr-5">Skills</button></Link>
+        <Link to="inventory"><button type="button" class="btn btn-dark mr-5">Inventory</button></Link>
         </div>
-        <div className="container">
+        <div className="container mt-5">
         <li class="d-inline-flex p-10 m-40 "> 
         <BasicInfo/>
         <OtherInfo/>
         <AbilityScores/>
         <SkillInfo/>
         </li>
-        
+       
         </div>
       
         </div>

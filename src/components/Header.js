@@ -16,10 +16,10 @@ import Register from './Register'
   render() {
     return (
       <div >
-        <header className= "navbar navbar-expand-sm navbar-dark bg-danger mb-0 py-0 d-flex justify-content-between  " > <h1><i class="fab fa-d-and-d ml-10"></i></h1><h1>Tabletop Pro</h1>
+        <header className= "navbar navbar-expand-sm navbar-dark bg-dark mb-5 py-0 d-flex justify-content-between text-white  " > <h1><i class="fab fa-d-and-d ml-10"></i></h1><h1>Tabletop Pro</h1>
         {this.props.isAuthenticated ?
-        <button className= "btn btn-outline-dark my-2 my-sm-0 mr-5" onClick={this.logout}><Link to ="/">Logout</Link></button>:
-        <button className= "btn btn-outline-dark my-2 my-sm-0 mr-5">
+        <button className= "btn btn-outline-light my-2 my-sm-0 mr-5" onClick={this.logout}><Link to ="/">Logout</Link></button>:
+        <button className= "btn btn-outline-light my-2 my-sm-0 mr-5">
           <Link to ="/">login</Link>
           </button>}
         </header>
